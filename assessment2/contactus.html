@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome 라이브러리 로드 -->
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather</title>
+
+    <script></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+          <a href="news.html" class="navbar-brand">
+            <img src="imgs/logo.png" class="logo" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="news.html" class="nav-link">News</a>
+              </li>
+              <li class="nav-item">
+                <a href="weather.html" class="nav-link">Weahter</a>
+              </li>
+              <li class="nav-item">
+                <a href="contactus.html" class="nav-link">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="p-3 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 align-items-left">
+              <h3 id="city-name" class="mb-5">Contact us</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section id="contactTable" class="p-5">
+      <div class="container">
+        <form class="contactus row g-3">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@google.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="memo" class="form-label">Memo</label>
+            <textarea class="form-control" id="memo" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer bg-dark py-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="footerAddress">
+          <p>PO BOX 3000 Melbourne VIC 3000</p>
+          <div class="footerSocialMedia d-flex justify-content-center">
+            <a href="#"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

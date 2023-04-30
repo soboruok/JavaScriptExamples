@@ -70,6 +70,12 @@ th,
   text-align: center;
 }
 
+.contactus {
+  align-items: center;
+  padding: 0 150px;
+  display: flex;
+}
+
 /* Footer */
 .footer {
   margin-top: 20px;
@@ -94,5 +100,8 @@ th,
 @media (max-width: 768px) {
   .searchNews {
     height: 20px; /* Set a fixed height for the container */
+  }
+  .contactus {
+    padding: 0 20px;
   }
 }
