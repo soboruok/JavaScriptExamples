@@ -371,7 +371,8 @@
         </div>
       </div>
     </footer>
-
+    <!-- apiKey 값을 사용하는 코드 -->
+    <script src="./config.js"></script>
     <script>
       //Constant, Variable declaration
       //The const keyword is used for something cannot be reassigned.
@@ -380,29 +381,29 @@
       const progressBar = document.querySelector(".progress-bar");
       const progressText = document.querySelector(".progress-text");
       const cityName = document.querySelector("#city-input");
-      const apiKey = "";
+
       //when page load first, Melbourne weather will display using lat, lon not cityName
       const lat = -37.8136;
       const lon = 144.9631;
       let url = "";
 
       //Methods : get weather URL (User input)
-      function getWeatherUrl(cityName, apiKey) {
+      function getWeatherUrl(cityName, apiKeyW) {
         cityName = cityName.toLowerCase();
-        return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+        return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKeyW}`;
       }
 
       //Methods : get melbourne, Australia weather URL using lat, lon.
-      function getDefaultWeatherUrl(apiKey, lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      function getDefaultWeatherUrl(apiKeyW, lat, lon) {
+        return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKeyW}`;
       }
 
       //Class : Weather
       class Weather {
         //Constructor
         //when instance created, the constructor will be called automatically.
-        constructor(apiKey) {
-          this.apiKey = apiKey;
+        constructor(apiKeyW) {
+          this.apiKeyW = apiKeyW;
         }
 
         // Methods:
@@ -413,9 +414,9 @@
           //if the user enters "melbourne" as the city name, it will navigate to melbourne, australia
           if (!cityName || cityName.toLowerCase() === "melbourne") {
             cityName = "Melbourne";
-            url = getDefaultWeatherUrl(this.apiKey, lat, lon);
+            url = getDefaultWeatherUrl(this.apiKeyW, lat, lon);
           } else {
-            url = getWeatherUrl(cityName, this.apiKey);
+            url = getWeatherUrl(cityName, this.apiKeyW);
           }
 
           try {
@@ -524,14 +525,14 @@
 
       //created instance of Weather.
       //Passing the apiKey value as an parameter to the constructor method of the Weather class.
-      const weather = new Weather(apiKey);
+      const weather = new Weather(apiKeyW);
 
       // Select the element with get-weather-btn, when clicking, the addEventListener() method is called.
       const getWeatherBtn = document.querySelector("#get-weather-btn");
       getWeatherBtn.addEventListener("click", () => {
         const cityInput = document.querySelector("#city-input");
         const cityName = cityInput.value;
-        //const url = getWeatherUrl(cityName, apiKey);
+        //const url = getWeatherUrl(cityName, apiKeyW);
         //console.log(url);
         weather.getWeather(cityName);
       });
