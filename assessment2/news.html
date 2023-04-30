@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome 라이브러리 로드 -->
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Today's News</title>
+
+    <script></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <img src="imgs/logo.png" class="logo" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link">News</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Weahter</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="p-3 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 align-items-left">
+              <h3 id="city-name" class="mb-5">Today's NEWS</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section
+      class="searchNews p-4 d-flex justify-content-center align-items-end"
+    >
+      <div class="form-group d-flex align-items-center col-md-6">
+        <input
+          type="text"
+          class="form-control"
+          id="news-input"
+          placeholder="Enter News Title"
+        />
+
+        <button
+          type="submit"
+          class="btn btn-dark d-flex align-items-center mx-2"
+          id="get-news-btn"
+        >
+          Search
+        </button>
+      </div>
+    </section>
+
+    <section id="weatherTable" class="p-1">
+        <div class="container">
+          <!-- bootstrap progressbar -->
+        <div class="progress" style="height: 10px; margin: 0x">
+          <div
+            class="progress-bar progress-bar-striped bg-success"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            100%
+          </div>
+        </div>
+          <div class="row row-cols-1 row-cols-md-2 g-2">
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header cardHeaderBg">
+                  <small class="text-muted"></small>
+                  <h5 class="card-title"></h5>
+                </div>
+                <div class="card-body">
+                  <div class="card-info">
+                    <img
+                      src=""
+                      alt="Article Image"
+                      class="card-image card-img-top"
+                    />
+                    <span class="card-memo"></span>
+                  </div>
+                </div>
+                <div class="card-footer cardFooterBg">
+                  <a
+                    href=""
+                    class="card-link btn btn-success btn-sm"
+                    target="_blank"
+                    >more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer bg-dark py-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="footerAddress">
+          <p>PO BOX 3000 Melbourne VIC 3000</p>
+          <div class="footerSocialMedia d-flex justify-content-center">
+            <a href="#"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // //Weather
+      // const apiKeyWeather = "05e6a10a82f7a5b1c652075eb9f956f5";
+      // const lat = -37.8136;
+      // const lon = 144.9631;
+      // let weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKeyWeather}`;
+
+      // console.log(weatherURL);
+      // document.addEventListener("DOMContentLoaded", async () => {
+      //   try {
+      //     const res = await fetch(weatherURL);
+      //     const temp = await res.json();
+      //     console.log(temp);
+      //   } catch (err) {
+      //     console.error(err);
+      //   }
+      // });
+
+      const apiKey = "44ce1b62d60541ca85d586dccc7d8519";
+      const progressBar = document.querySelector(".progress-bar");
+      let url=''; 
+
+      class News {
+        constructor(apiKey) {
+          this.apiKey = apiKey;
+        }
+
+        async getNews(newsInput) {
+          try {
+            // Show progress bar from 0% (boostrap)
+            progressBar.style.width = "0%";
+            progressBar.setAttribute("aria-valuenow", "0");
+
+            if(newsInput){
+               url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}&q=${newsInput}`;
+            } else{
+               url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`;
+            }
+            const res = await fetch(url);
+            console.log(res);
+
+            if (res.status !== 200) {
+              alert("There are no News");
+              window.location.reload();
+            }
+
+            const data = await res.json();
+            //{status: 'ok', totalResults: 10, articles: Array(10)}
+            console.log(data.articles);
+            console.log(data.totalResults);
+            // Show progress bar from 100% (boostrap)
+            progressBar.style.width = "100%";
+            progressBar.setAttribute("aria-valuenow", "100");
+
+            for (let i = 0; i < data.totalResults; i++) {
+              const card = document.querySelectorAll(".card")[i]; // all classname card 0 ~ 10
+              const image = card.querySelector("img");
+              const title = card.querySelector(".card-title");
+
+              const memo = card.querySelector(".card-memo");
+              const author = card.querySelector(".text-muted");
+              const link = card.querySelector(".card-link");
+              const article = data.articles[i]; // call article from 0 to 10
+
+              title.textContent = article.title;
+
+              memo.textContent = article.content;
+              author.textContent = article.author;
+              image.src = article.urlToImage;
+              link.href = article.url;
+              console.log(memo.textContent);
+            }
+          } catch (error) {
+            console.log(error);
+            console.error(error);
+          }
+        }
+      }
+
+      
+
+      const getNewsBtn = document.querySelector("#get-news-btn")
+      const newsInput = document.querySelector("#news-input")
+        
+      getNewsBtn.addEventListener("click", ()=>{
+        const newsName = newsInput.value
+        console.log(newsName);
+      })
+
+
+      BBCNews = new News(apiKey);
+      BBCNews.getNews(newsInput);
+
+
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-image: url("../imgs/bg-green.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 40vh;
+  width: 100%;
+}
+.logo {
+  width: 70px;
+}
+
+.navbar-nav {
+  padding: 5px 30px;
+  border-radius: 1px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card {
+  margin: 10px 0;
+  box-shadow: 0 3px 10px rgba(26, 25, 25, 0.1);
+}
+
+.text-muted {
+  font-size: 11px;
+  border-top: 2px solid #c4c2c2;
+  border-left: 1px solid #c4c2c2;
+  padding: 3px;
+}
+
+.card-title {
+  font-weight: 900;
+  text-align: center;
+}
+
+.cardHeaderBg {
+  background-image: linear-gradient(to top, #fff 0%, #c4c2c2 180%);
+  border-bottom: 2px solid rgb(226, 226, 226);
+}
+.cardFooterBg {
+  background-color: #fff;
+}
+
+.card-image {
+  width: 50%;
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+}
+
+.card-memo {
+  margin-left: 1rem;
+}
+
+th,
+.day,
+.date,
+.temp,
+.weather {
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+}
+.footer .flex {
+  justify-content: space-between;
+}
+
+.footerAddress p {
+  color: #fff;
+}
+
+.footerSocialMedia i {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.card-link {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .searchNews {
+    height: 20px; /* Set a fixed height for the container */
+  }
+}

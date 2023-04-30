@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome 라이브러리 로드 -->
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather</title>
+
+    <script></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <img src="imgs/logo.png" class="logo" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link">News</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Weahter</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="p-3 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 align-items-left">
+              <h3 id="city-name" class="mb-5"></h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="searchNews p-4 d-flex justify-content-center">
+      <div class="form-group d-flex align-items-center col-md-6">
+        <input
+          type="text"
+          class="form-control"
+          id="city-input"
+          placeholder="Enter city name"
+        />
+
+        <button
+          type="submit"
+          class="btn btn-dark d-flex align-items-center mx-2"
+          id="get-weather-btn"
+        >
+          Search
+        </button>
+      </div>
+    </section>
+
+    <section id="weatherTable" class="p-1">
+      <div class="container">
+        <div><span class="progress-text text-primary"></span></div>
+        <!-- bootstrap progressbar -->
+        <div class="progress" style="height: 10px; margin: 0x">
+          <div
+            class="progress-bar progress-bar-striped bg-success"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            100%
+          </div>
+        </div>
+
+        <table class="table table-sm table-hover p-2 temp-container">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Date</th>
+              <th>Temperature</th>
+              <th>Weather</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+            <tr>
+              <td class="day"></td>
+              <td class="date"></td>
+              <td class="temp"></td>
+              <td class="weather"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer bg-dark py-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="footerAddress">
+          <p>PO BOX 3000 Melbourne VIC 3000</p>
+          <div class="footerSocialMedia d-flex justify-content-center">
+            <a href="#"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      //global unique variables. use const
+      const progressBar = document.querySelector(".progress-bar");
+      const progressText = document.querySelector(".progress-text");
+      const cityName = document.querySelector("#city-input");
+      const apiKey = "05e6a10a82f7a5b1c652075eb9f956f5";
+      //when page load first, Melbourne weather will display using lat, lon not cityName
+      const lat = -37.8136;
+      const lon = 144.9631;
+      let url = "";
+
+      //get weather URL (cityName, apiKey)
+      function getWeatherUrl(cityName, apiKey) {
+        cityName = cityName.toLowerCase();
+        return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+      }
+
+      //get default weather URL
+      function getDefaultWeatherUrl(apiKey, lat, lon) {
+        return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      }
+
+      class Weather {
+        //when instance created, the constructor will be called automatically.
+        constructor(apiKey) {
+          this.apiKey = apiKey;
+        }
+
+        // getWeather = (cityName) => {}
+        async getWeather(cityName) {
+          //Call Default URL (Melbourne, Austrlia. it is called only lat, lon not cityName)
+          if (!cityName || cityName.toLowerCase() === "melbourne") {
+            cityName = "Melbourne";
+            url = getDefaultWeatherUrl(this.apiKey, lat, lon);
+          } else {
+            url = getWeatherUrl(cityName, this.apiKey);
+          }
+
+          try {
+            document.querySelector(
+              "#city-name"
+            ).innerHTML = `Welcome to <strong>${cityName.toUpperCase()}</strong>`;
+
+            // Show progress bar from 0% (boostrap)
+            progressBar.style.width = "0%";
+            progressBar.setAttribute("aria-valuenow", "0");
+            progressText.innerHTML = "Searching...";
+
+            //Asynchronously fetching data
+            //using the fetch function,The .json() method returns a promise, By using await with .json(), Wait
+            const res = await fetch(url);
+            console.log(res);
+
+            // Show progress bar from 100% (boostrap)
+            progressBar.style.width = "100%";
+            progressBar.setAttribute("aria-valuenow", "100");
+            progressText.innerHTML = "";
+
+            //if status is not 200, then fail
+            if (res.status !== 200) {
+              //Alert when user enter wrong information
+              alert("There are no information");
+              document.querySelector("#city-name").innerHTML = "";
+              cityName = "";
+              window.location.reload();
+              //   throw new Error("Failed fetch data");
+            }
+
+            // when getting data successfully.
+            const temp = await res.json();
+            //console.log(temp);
+            console.log(temp.list);
+
+            //Select the elements by using querySelector or querySelectorAll or getElementById..
+            for (let i = 0; i < temp.list.length; i++) {
+              const tempContainer = document.querySelector(".temp-container");
+              const tempElements = tempContainer.querySelectorAll(".temp");
+              const dateElements = tempContainer.querySelectorAll(".date");
+              const dayElements = tempContainer.querySelectorAll(".day");
+              const weatherElements =
+                tempContainer.querySelectorAll(".weather");
+
+              // display temprature
+              const degree = temp.list[i].main.temp - 273.15;
+              tempElements[i].textContent = `${Math.round(degree)} °C`;
+
+              // display date
+              const date = new Date(temp.list[i].dt * 1000);
+              const month = date.getMonth() + 1;
+              const day = date.getDate();
+
+              const formattedDate = `${month}/${day}`;
+              dateElements[i].textContent = formattedDate;
+
+              //display day
+              const formattedDay = date.toLocaleDateString("en-US", {
+                weekday: "long",
+              });
+              dayElements[i].innerHTML = formattedDay;
+
+              //display time
+              const formattedTime = date.toLocaleTimeString("en-GB", {
+                timeStyle: "short",
+              });
+              //console.log(parseInt(formattedTime));
+              dateElements[i].innerHTML =
+                formattedDate + "(" + formattedTime + ")";
+
+              // display weather
+              weatherElements[i].textContent = temp.list[i].weather[0].main;
+              //console.log(weatherElements[i].textContent);
+              if (weatherElements[i].textContent == "Clouds") {
+                weatherElements[i].innerHTML = '<i class="fas fa-cloud"></i>';
+                weatherElements[i].style.color = "#999";
+              } else if (weatherElements[i].textContent == "Rain") {
+                weatherElements[i].innerHTML =
+                  '<i class="fas fa-umbrella"></i>';
+                weatherElements[i].style.color = "#18b4e4";
+              }
+              // this is for late night(19~6) when it's clear weather, show moon.
+              else if (
+                (weatherElements[i].textContent == "Clear" &&
+                  parseInt(formattedTime) >= 19) ||
+                parseInt(formattedTime) < 6
+              ) {
+                weatherElements[i].innerHTML = "<i class='fas fa-moon'></i>";
+                weatherElements[i].style.color = "#000";
+              } else if (weatherElements[i].textContent == "Clear") {
+                weatherElements[i].innerHTML = "<i class='fas fa-sun'></i>";
+                weatherElements[i].style.color = "red";
+              } else {
+                weatherElements[i].textContent = temp.list[i].weather[0].main;
+              }
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        }
+      }
+
+      //created instance of Weather.
+      //Passing the apiKey value as an argument to the constructor method of the Weather class.
+      const weather = new Weather(apiKey);
+
+      // Select the element with get-weather-btn, when clicking, the addEventListener() method is called.
+      // Executing when the click event is triggered on the getWeatherBtn element
+      const getWeatherBtn = document.querySelector("#get-weather-btn");
+      getWeatherBtn.addEventListener("click", () => {
+        const cityInput = document.querySelector("#city-input");
+        const cityName = cityInput.value;
+        const url = getWeatherUrl(cityName, apiKey);
+        console.log(url);
+        weather.getWeather(cityName);
+      });
+
+      // When page loded, display
+      document.addEventListener("DOMContentLoaded", function () {
+        const cityName = "";
+        weather.getWeather(cityName);
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
