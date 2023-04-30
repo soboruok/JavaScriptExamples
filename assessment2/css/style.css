@@ -104,7 +104,7 @@ th,
 
 @media (max-width: 768px) {
   .searchNews {
-    padding: 50px; /* Set a fixed height for the container */
+    padding: 50px;
   }
   .contactus {
     padding: 0 20px;
