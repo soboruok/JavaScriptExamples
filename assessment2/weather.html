@@ -11,7 +11,6 @@
       crossorigin="anonymous"
     />
     <!-- Font Awesome 라이브러리 로드 -->
-
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -30,7 +29,7 @@
       <nav class="navbar navbar-expand-lg navbar-light py-3">
         <div class="container">
           <a href="news.html" class="navbar-brand">
-            <img src="imgs/logo.png" class="logo" />
+            <img src="imgs/logo.png" class="logo" alt="logo" />
           </a>
 
           <button
@@ -47,7 +46,7 @@
                 <a href="news.html" class="nav-link">News</a>
               </li>
               <li class="nav-item">
-                <a href="weather.html" class="nav-link">Weahter</a>
+                <a href="weather.html" class="nav-link">Weather</a>
               </li>
               <li class="nav-item">
                 <a href="contactus.html" class="nav-link">Contact us</a>
@@ -374,7 +373,10 @@
     </footer>
 
     <script>
-      //global unique variables. use const
+      //Constant, Variable declaration
+      //The const keyword is used for something cannot be reassigned.
+      //let keyword is used for declaring the value can be reassigned.
+      //Here, url has 2 types urls
       const progressBar = document.querySelector(".progress-bar");
       const progressText = document.querySelector(".progress-text");
       const cityName = document.querySelector("#city-input");
@@ -384,26 +386,31 @@
       const lon = 144.9631;
       let url = "";
 
-      //get weather URL (cityName, apiKey)
+      //Methods : get weather URL (User input)
       function getWeatherUrl(cityName, apiKey) {
         cityName = cityName.toLowerCase();
         return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
       }
 
-      //get default weather URL
+      //Methods : get melbourne, Australia weather URL using lat, lon.
       function getDefaultWeatherUrl(apiKey, lat, lon) {
         return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
       }
 
+      //Class : Weather
       class Weather {
+        //Constructor
         //when instance created, the constructor will be called automatically.
         constructor(apiKey) {
           this.apiKey = apiKey;
         }
 
-        // getWeather = (cityName) => {}
+        // Methods:
+        // getWeather = (cityName) => {} or
         async getWeather(cityName) {
-          //Call Default URL (Melbourne, Austrlia. it is called only lat, lon not cityName)
+          //there is not cityName or cityName is  melbourne.
+          //So, when the page is initially loaded, cityName is sent as an empty string.
+          //if the user enters "melbourne" as the city name, it will navigate to melbourne, australia
           if (!cityName || cityName.toLowerCase() === "melbourne") {
             cityName = "Melbourne";
             url = getDefaultWeatherUrl(this.apiKey, lat, lon);
@@ -412,6 +419,7 @@
           }
 
           try {
+            //title name
             document.querySelector(
               "#city-name"
             ).innerHTML = `Welcome to <strong>${cityName.toUpperCase()}</strong>`;
@@ -421,19 +429,19 @@
             progressBar.setAttribute("aria-valuenow", "0");
             progressText.innerHTML = "Searching...";
 
-            //Asynchronously fetching data
+            //Asynchronously fetching data. use await
             //using the fetch function,The .json() method returns a promise, By using await with .json(), Wait
             const res = await fetch(url);
-            console.log(res);
+            //console.log(res);
 
             // Show progress bar from 100% (boostrap)
             progressBar.style.width = "100%";
             progressBar.setAttribute("aria-valuenow", "100");
             progressText.innerHTML = "";
 
-            //if status is not 200, then fail
+            //if status is not 200, meaning, fail
             if (res.status !== 200) {
-              //Alert when user enter wrong information
+              //The alert message and page relocation for when the user inputs an incorrect value
               alert("There are no information");
               document.querySelector("#city-name").innerHTML = "";
               cityName = "";
@@ -456,24 +464,24 @@
                 tempContainer.querySelectorAll(".weather");
 
               // display temprature
-              const degree = temp.list[i].main.temp - 273.15;
+              const degree = temp.list[i].main.temp - 273.15; //To convert to Celsius, Need to subtract 273.15
               tempElements[i].textContent = `${Math.round(degree)} °C`;
 
               // display date
-              const date = new Date(temp.list[i].dt * 1000);
-              const month = date.getMonth() + 1;
+              const date = new Date(temp.list[i].dt * 1000); //Multiplying by 1000 is necessary to convert the Unix timestamp, which is in seconds.
+              const month = date.getMonth() + 1; //When calling the getMonth() method on a Date object, the returned month value starts from 0 and adds 1.
               const day = date.getDate();
 
               const formattedDate = `${month}/${day}`;
               dateElements[i].textContent = formattedDate;
 
-              //display day
+              //display day. Displaying the current local Date in English.
               const formattedDay = date.toLocaleDateString("en-US", {
                 weekday: "long",
               });
               dayElements[i].innerHTML = formattedDay;
 
-              //display time
+              //display time. Displaying the current local Time in English.
               const formattedTime = date.toLocaleTimeString("en-GB", {
                 timeStyle: "short",
               });
@@ -483,7 +491,8 @@
 
               // display weather
               weatherElements[i].textContent = temp.list[i].weather[0].main;
-              //console.log(weatherElements[i].textContent);
+
+              //Replace the text with Font Awesome icons.
               if (weatherElements[i].textContent == "Clouds") {
                 weatherElements[i].innerHTML = '<i class="fas fa-cloud"></i>';
                 weatherElements[i].style.color = "#999";
@@ -492,7 +501,7 @@
                   '<i class="fas fa-umbrella"></i>';
                 weatherElements[i].style.color = "#18b4e4";
               }
-              // this is for late night(19~6) when it's clear weather, show moon.
+              // this is for late night(19~5) when it's clear weather, show moon.
               else if (
                 (weatherElements[i].textContent == "Clear" &&
                   parseInt(formattedTime) >= 19) ||
@@ -514,21 +523,20 @@
       }
 
       //created instance of Weather.
-      //Passing the apiKey value as an argument to the constructor method of the Weather class.
+      //Passing the apiKey value as an parameter to the constructor method of the Weather class.
       const weather = new Weather(apiKey);
 
       // Select the element with get-weather-btn, when clicking, the addEventListener() method is called.
-      // Executing when the click event is triggered on the getWeatherBtn element
       const getWeatherBtn = document.querySelector("#get-weather-btn");
       getWeatherBtn.addEventListener("click", () => {
         const cityInput = document.querySelector("#city-input");
         const cityName = cityInput.value;
-        const url = getWeatherUrl(cityName, apiKey);
-        console.log(url);
+        //const url = getWeatherUrl(cityName, apiKey);
+        //console.log(url);
         weather.getWeather(cityName);
       });
 
-      // When page loded, display
+      // When page is loded, display
       document.addEventListener("DOMContentLoaded", function () {
         const cityName = "";
         weather.getWeather(cityName);

@@ -11,14 +11,12 @@
       crossorigin="anonymous"
     />
     <!-- Font Awesome 라이브러리 로드 -->
-
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-
     <link rel="stylesheet" href="css/style.css" />
     <title>Today's News</title>
 
@@ -30,7 +28,7 @@
       <nav class="navbar navbar-expand-lg navbar-light py-3">
         <div class="container">
           <a href="news.html" class="navbar-brand">
-            <img src="imgs/logo.png" class="logo" />
+            <img src="imgs/logo.png" class="logo" alt="logo" />
           </a>
 
           <button
@@ -47,7 +45,7 @@
                 <a href="news.html" class="nav-link">News</a>
               </li>
               <li class="nav-item">
-                <a href="weather.html" class="nav-link">Weahter</a>
+                <a href="weather.html" class="nav-link">Weather</a>
               </li>
               <li class="nav-item">
                 <a href="contactus.html" class="nav-link">Contact us</a>
@@ -384,50 +382,38 @@
     </footer>
 
     <script>
-      // //Weather
-      // const apiKeyWeather = "05e6a10a82f7a5b1c652075eb9f956f5";
-      // const lat = -37.8136;
-      // const lon = 144.9631;
-      // let weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKeyWeather}`;
-
-      // console.log(weatherURL);
-      // document.addEventListener("DOMContentLoaded", async () => {
-      //   try {
-      //     const res = await fetch(weatherURL);
-      //     const temp = await res.json();
-      //     console.log(temp);
-      //   } catch (err) {
-      //     console.error(err);
-      //   }
-      // });
-
+      //Constant, Variable declaration
       const apiKey = "44ce1b62d60541ca85d586dccc7d8519";
       const progressBar = document.querySelector(".progress-bar");
       const getNewsBtn = document.querySelector("#get-news-btn");
       const newsInput = document.querySelector("#news-input");
-
       let url = "";
 
       //get news ALL URL
       function getNewsUrlAll(apiKey) {
         return `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`;
       }
-      //
+      //get userinput and apikey
       function getNewsUrl(searchQuery, apiKey) {
         return `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}&q=${searchQuery}`;
       }
 
+      //Class : News
       class News {
+        //Constructor
         constructor(apiKey) {
           this.apiKey = apiKey;
         }
 
+        // Methods:
+        // const getNews = async(newsName) => {}
         async getNews(newsName) {
           try {
             // Show progress bar from 0% (boostrap)
             progressBar.style.width = "0%";
             progressBar.setAttribute("aria-valuenow", "0");
 
+            //When user serach, then there is newsName, otherwise bring all news.
             if (newsName) {
               url = getNewsUrl(newsName, this.apiKey);
               console.log(url);
@@ -436,11 +422,12 @@
             }
             const res = await fetch(url);
 
+            //If the fetch fails to get data, alert message will be displayed.
             if (res.status !== 200) {
               alert("There are no News");
-              window.location.reload();
             }
 
+            // when getting data successfully.
             const data = await res.json();
             //{status: 'ok', totalResults: 10, articles: Array(10)}
             console.log(data.articles);
@@ -449,8 +436,9 @@
             progressBar.style.width = "100%";
             progressBar.setAttribute("aria-valuenow", "100");
 
+            //call data from 0 to 9
             for (let i = 0; i < data.totalResults; i++) {
-              const card = document.querySelectorAll(".card")[i]; // all classname card 0 ~ 10
+              const card = document.querySelectorAll(".card")[i];
               const image = card.querySelector("img");
               const title = card.querySelector(".card-title");
 
@@ -459,7 +447,7 @@
               const link = card.querySelector(".card-link");
               const article = data.articles[i]; // call article from 0 to 10
 
-              //whether newsName is included in article.title
+              //whether newsName is included in article.title, then highlight with border
               if (
                 newsName &&
                 article.title.toLowerCase().includes(newsName.toLowerCase())
@@ -482,11 +470,15 @@
         }
       }
 
+      //created instance of News.
       const BBCNews = new News(apiKey);
-      // when page load at first,
-      BBCNews.getNews();
 
-      //if there is newsInput,
+      // When page is loded, display
+      document.addEventListener("DOMContentLoaded", function () {
+        BBCNews.getNews();
+      });
+
+      // Select the element with getNewsBtn, when clicking, the addEventListener() method is called.
       getNewsBtn.addEventListener("click", () => {
         const newsName = newsInput.value;
         BBCNews.getNews(newsName);

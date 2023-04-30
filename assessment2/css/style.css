@@ -24,12 +24,6 @@ header {
   text-decoration: none;
 }
 
-#navmenu {
-  background-image: linear-gradient(to top, #20aaa3 0%, #26b3ab 180%);
-  border-bottom: 1px solid #20a099;
-  opacity: 0.8;
-}
-
 #navmenu .navbar-nav {
   display: flex;
   align-items: center;
@@ -114,5 +108,10 @@ th,
   }
   .contactus {
     padding: 0 20px;
+  }
+  #navmenu {
+    background-image: linear-gradient(to top, #20aaa3 180%, #26b3ab 0%);
+    border-bottom: 1px solid #20a099;
+    opacity: 0.8;
   }
 }
