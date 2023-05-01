@@ -58,14 +58,17 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 align-items-left">
-              <h3 id="city-name" class="mb-5"></h3>
+              <h3 id="city-name" class="mb-5">Weather</h3>
             </div>
           </div>
         </div>
       </section>
     </header>
 
-    <section class="searchNews p-4 d-flex justify-content-center">
+    <section
+      class="searchNews p-4 d-flex justify-content-center align-items-end"
+    >
+      <h5 class="px-2"><strong>Weather Search</strong></h5>
       <div class="form-group d-flex align-items-center col-md-6">
         <input
           type="text"
@@ -86,9 +89,12 @@
 
     <section id="weatherTable" class="p-1">
       <div class="container">
+        <h3 class="px-2 my-5 text-center">
+          <strong><i class="fas fa-stream mx-2"></i>Searched List</strong>
+        </h3>
         <div><span class="progress-text text-primary"></span></div>
         <!-- bootstrap progressbar -->
-        <div class="progress" style="height: 10px; margin: 0x">
+        <div class="progress" style="height: 10px; margin: 0px">
           <div
             class="progress-bar progress-bar-striped bg-success"
             role="progressbar"
@@ -100,7 +106,6 @@
             100%
           </div>
         </div>
-
         <table class="table table-sm table-hover p-2 temp-container">
           <thead>
             <tr>
